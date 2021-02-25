@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Todos :todos="todos" />
+    <Todos :todos="todos" @handDelete="handDelete" />
   </div>
 </template>
 
@@ -29,6 +29,12 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    handDelete(id) {
+      //返回除了 id与传回的参数id相等的 其他对象，组成一个行的数组并将其赋予给 this.todos
+      this.todos = this.todos.filter((todo) => todo.id !== id);
+    },
   },
   components: {
     Todos,

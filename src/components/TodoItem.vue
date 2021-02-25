@@ -3,6 +3,7 @@
     <p>
       <input type="checkbox" v-on:change="markCompleta" />
       {{ todo.title }}
+      <button class="del" @click="$emit('deleteItem', todo.id)">x</button>
     </p>
   </div>
 </template>
