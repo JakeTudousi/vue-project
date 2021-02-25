@@ -1,10 +1,17 @@
 <template>
   <div>
+<<<<<<< Updated upstream
     <Todos :todos="todos" />
+=======
+    <Header />
+    <!-- 路由切换的容器 -->
+    <router-view> </router-view>
+>>>>>>> Stashed changes
   </div>
 </template>
 
 <script>
+<<<<<<< Updated upstream
 import Todos from "./components/Todos";
 export default {
   name: "app",
@@ -32,6 +39,13 @@ export default {
   },
   components: {
     Todos,
+=======
+import Header from "./components/layout/Header";
+export default {
+  name: "app",
+  components: {
+    Header,
+>>>>>>> Stashed changes
   },
 };
 </script>
