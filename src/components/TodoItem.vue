@@ -1,0 +1,41 @@
+<template>
+  <div class="todo-item" :class="{ 'is-complete': todo.completed }">
+    <p>
+      <input type="checkbox" v-on:change="markCompleta" />
+      {{ todo.title }}
+    </p>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "todo",
+  props: ["todo"],
+  methods: {
+    markCompleta() {
+      //   console.log(this.todo);
+      this.todo.completed = !this.todo.completed;
+    },
+  },
+};
+</script>
+
+<style scoped>
+.todo-item {
+  background: #f4f4f4;
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+}
+.is-complete {
+  text-decoration: line-through;
+}
+.del {
+  background: #f00;
+  color: #fff;
+  border: none;
+  padding: 5px 9px;
+  border-radius: 50%;
+  cursor: pointer;
+  float: right;
+}
+</style>
